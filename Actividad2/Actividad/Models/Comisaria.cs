@@ -10,9 +10,11 @@ namespace Actividad.Models
     {
         public int CantidadIncidentes { get; private set; }
 
+        //
         private List<Incidente> incidentes = new List<Incidente>();
         private Guardia[] guardias = new Guardia[2];
         private Policia[] agentes = new Policia[2];
+        //
 
         public bool AsignarPolicia(Policia policia)
         {
