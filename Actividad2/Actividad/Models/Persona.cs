@@ -18,7 +18,7 @@ namespace Actividad.Models
 
         public string VerDatos()
         {
-            return $@"DNI: {this.DNI} - Nombre: {this.Nombre}";
+            return $@"Nombre: {this.Nombre} - DNI: {this.DNI} ";
         }
     }
 }

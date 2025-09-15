@@ -8,31 +8,29 @@ namespace Actividad.Models
 {
     internal class Incidente
     {
-        public string Motivo;
+        public string Motivo { get; set; }
 
-        public int Hora;
+        public int Hora { get; set; }
 
-        public int Minuto;
+        public int Minuto { get; set; }
 
-        public int TipoIncidente { get; private set; }
+        public int TipoIncidente { get; set; }
+
 
         public Persona Sujeto { get; private set; }
+
         public Policia OficialACargo { get; private set; }
 
-        public Incidente(Policia oficial, Persona sujeto, int tipoIncidente, int hora, int minuto, string motivo) {
+        public Incidente(Policia oficial, Persona sujeto) {
             
             this.OficialACargo = oficial;
-            this.Sujeto = sujeto;
-            this.TipoIncidente = tipoIncidente;
-            this.Hora = hora;
-            this.Minuto = minuto;
-            this.Motivo = motivo;
+            this.Sujeto = sujeto;  
         }
 
         public string VerDescripcion()
         {
             string resultado = "";
-            if (this.TipoIncidente == 1)
+            if (this.TipoIncidente == 0)
             {
                 resultado = $@"Denuncia Policial. Emitida a las {this.Hora} : {this.Minuto}
                                Motivo: {this.Motivo},

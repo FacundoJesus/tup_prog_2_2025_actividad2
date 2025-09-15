@@ -28,44 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lsbIncidentes = new ListBox();
-            button1 = new Button();
+            btnCerrar = new Button();
+            tbResultado = new TextBox();
             SuspendLayout();
             // 
-            // lsbIncidentes
+            // btnCerrar
             // 
-            lsbIncidentes.FormattingEnabled = true;
-            lsbIncidentes.ItemHeight = 15;
-            lsbIncidentes.Location = new Point(12, 12);
-            lsbIncidentes.Name = "lsbIncidentes";
-            lsbIncidentes.Size = new Size(387, 394);
-            lsbIncidentes.TabIndex = 0;
+            btnCerrar.DialogResult = DialogResult.OK;
+            btnCerrar.Location = new Point(165, 415);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(75, 23);
+            btnCerrar.TabIndex = 1;
+            btnCerrar.Text = "Cerrar";
+            btnCerrar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // tbResultado
             // 
-            button1.DialogResult = DialogResult.Cancel;
-            button1.Location = new Point(164, 415);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Cerrar";
-            button1.UseVisualStyleBackColor = true;
+            tbResultado.Location = new Point(12, 12);
+            tbResultado.Multiline = true;
+            tbResultado.Name = "tbResultado";
+            tbResultado.Size = new Size(391, 397);
+            tbResultado.TabIndex = 2;
             // 
             // FVerIncidentes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(415, 450);
-            Controls.Add(button1);
-            Controls.Add(lsbIncidentes);
+            Controls.Add(tbResultado);
+            Controls.Add(btnCerrar);
             Name = "FVerIncidentes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Ver incidentes";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         public ListBox lsbIncidentes;
-        private Button button1;
+        private Button btnCerrar;
+        public TextBox tbResultado;
     }
 }

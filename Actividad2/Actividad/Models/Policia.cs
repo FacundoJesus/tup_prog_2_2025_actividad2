@@ -12,6 +12,7 @@ namespace Actividad.Models
         public string Nombre { get; private set; }
         public int NumeroPlaca { get; private set; }
 
+
         public Policia(int dni, string nombre, int numeroPlaca)
         {
             this.DNI = dni;
@@ -19,9 +20,10 @@ namespace Actividad.Models
             this.NumeroPlaca = numeroPlaca;
         }
 
+
         public string VerDatos()
         {
-            return $@"{this.DNI} - {this.Nombre} - {this.NumeroPlaca}";
+            return $@"Nombre: {this.Nombre} - DNI: {this.DNI} - Nro Placa: {this.NumeroPlaca} ";
         }
     }
 }

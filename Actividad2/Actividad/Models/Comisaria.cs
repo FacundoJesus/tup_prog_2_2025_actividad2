@@ -8,26 +8,31 @@ namespace Actividad.Models
 {
     internal class Comisaria
     {
-        public int CantidadIncidentes { get; private set; }
+        public int CantidadIncidentes { 
+            get
+            {
+                return listaIncidentes.Count;
+            }
+        }
 
-        //
-        private List<Incidente> incidentes = new List<Incidente>();
+        //Lista de Incidentes
+        private List<Incidente> listaIncidentes = new List<Incidente>();
+        //Array de Guardias
         private Guardia[] guardias = new Guardia[2];
+        //Array de Policias
         private Policia[] agentes = new Policia[2];
-        //
-
+        
         public bool AsignarPolicia(Policia policia)
         {
-            bool asignado = true;
-            for (int i = 0; i < agentes.Length; i++)
+            bool esAsignado = false;
+            int i = 0;
+            if(agentes.Length < 2)
             {
-                if (agentes[i] == null)
-                {
-                    agentes[i] = policia;
-                    return asignado;
-                }
-            }
-            return !asignado;
+                agentes[i] = policia;
+                esAsignado = true;
+                i++;
+            }  
+            return esAsignado;
         }
 
         public Policia VerAgente(int numeroPlaca)
@@ -50,31 +55,36 @@ namespace Actividad.Models
 
         public void RegistrarIncidente(Policia agente, Persona sujeto, string motivo, int hora, int minutos, int tipoIncidente)
         {
-            Incidente nuevoIncidente = new Incidente(agente, sujeto, tipoIncidente, hora, minutos, motivo);
+            Incidente nuevoIncidente = new Incidente(agente, sujeto);
 
-            incidentes.Add(nuevoIncidente);
-            CantidadIncidentes++;
+            nuevoIncidente.Hora = hora;
+            nuevoIncidente.Minuto = minutos;
+            nuevoIncidente.Motivo = motivo;
+            nuevoIncidente.TipoIncidente = tipoIncidente;
+
+            listaIncidentes.Add(nuevoIncidente);
 
         } 
 
-        public void AsignarGuardia(int numero, int h1, int m1, int tiempoMinutos, Policia agente)
+        public void AsignarGuardia(int nroGuardia, int h1, int m1, int tiempoMinutos, Policia agente)
         {
-            if (numero > 0 && numero < agentes.Length)
+            if ( nroGuardia < 2)
             {
-                if (guardias[numero] == null)
-                {
-                    guardias[numero] = new Guardia();
-                }
+                Guardia guardia = new Guardia();
+                guardia.HoraDesde = h1;
+                guardia.MinutoDesde = m1;
+                guardia.CantidadMinutos = tiempoMinutos;
+
+                guardia.AsignarPolicia(agente,h1,m1,tiempoMinutos);
             }
-            guardias[numero].AsignarPolicia(agente, h1, m1, tiempoMinutos);
         }
 
         public Incidente VerIncidente(int idx)
         {
             Incidente incidente = null;
-            if (idx >= 0 && idx < incidentes.Count)
+            if (idx >= 0 && idx < listaIncidentes.Count)
             {
-                incidente = incidentes[idx];
+                incidente = listaIncidentes[idx] as Incidente;
             }
             return incidente;
         }

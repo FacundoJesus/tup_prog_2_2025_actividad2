@@ -31,42 +31,42 @@
             groupBox1 = new GroupBox();
             btnListarIncidentes = new Button();
             btnCreacionComisaria = new Button();
-            groupBox2 = new GroupBox();
+            gbOperacionSobreAgente = new GroupBox();
+            cmbPlacaAgente = new ComboBox();
             groupBox3 = new GroupBox();
-            nudDuracionenM = new NumericUpDown();
-            nudMinuto = new NumericUpDown();
-            nudHora = new NumericUpDown();
+            nudDuracionEnM = new NumericUpDown();
+            nudMinutoDesde = new NumericUpDown();
+            nudHoraDesde = new NumericUpDown();
             nudNroGuardia = new NumericUpDown();
-            btnAsignaciondeGuardias = new Button();
+            btnAsignacionGuardias = new Button();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            nudPlacaAgente = new NumericUpDown();
             label1 = new Label();
-            groupBox4 = new GroupBox();
+            gbAdministracion = new GroupBox();
+            cmbTipoIncidente = new ComboBox();
             btnRegistrarIncidente = new Button();
             tbMotivo = new TextBox();
             label9 = new Label();
-            tbDNI = new TextBox();
+            tbDNIPersona = new TextBox();
             label8 = new Label();
             tbNombrePersona = new TextBox();
             label7 = new Label();
-            numericUpDown1 = new NumericUpDown();
+            nudMinutoIncidente = new NumericUpDown();
             label6 = new Label();
-            numericUpDown2 = new NumericUpDown();
+            nudHoraIncidente = new NumericUpDown();
             label5 = new Label();
             btnCerrar = new Button();
             groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
+            gbOperacionSobreAgente.SuspendLayout();
             groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nudDuracionenM).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudMinuto).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudHora).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudDuracionEnM).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudMinutoDesde).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudHoraDesde).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudNroGuardia).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudPlacaAgente).BeginInit();
-            groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            gbAdministracion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudMinutoIncidente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudHoraIncidente).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -99,25 +99,34 @@
             btnCreacionComisaria.UseVisualStyleBackColor = true;
             btnCreacionComisaria.Click += btnCreacionComisaria_Click;
             // 
-            // groupBox2
+            // gbOperacionSobreAgente
             // 
-            groupBox2.Controls.Add(groupBox3);
-            groupBox2.Controls.Add(nudPlacaAgente);
-            groupBox2.Controls.Add(label1);
-            groupBox2.Location = new Point(12, 118);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(428, 251);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Operaciones sobre el agente";
+            gbOperacionSobreAgente.Controls.Add(cmbPlacaAgente);
+            gbOperacionSobreAgente.Controls.Add(groupBox3);
+            gbOperacionSobreAgente.Controls.Add(label1);
+            gbOperacionSobreAgente.Location = new Point(12, 118);
+            gbOperacionSobreAgente.Name = "gbOperacionSobreAgente";
+            gbOperacionSobreAgente.Size = new Size(428, 251);
+            gbOperacionSobreAgente.TabIndex = 1;
+            gbOperacionSobreAgente.TabStop = false;
+            gbOperacionSobreAgente.Text = "Operaciones sobre el agente";
+            // 
+            // cmbPlacaAgente
+            // 
+            cmbPlacaAgente.FormattingEnabled = true;
+            cmbPlacaAgente.Items.AddRange(new object[] { "Denuncia", "Arresto" });
+            cmbPlacaAgente.Location = new Point(104, 41);
+            cmbPlacaAgente.Name = "cmbPlacaAgente";
+            cmbPlacaAgente.Size = new Size(121, 23);
+            cmbPlacaAgente.TabIndex = 3;
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(nudDuracionenM);
-            groupBox3.Controls.Add(nudMinuto);
-            groupBox3.Controls.Add(nudHora);
+            groupBox3.Controls.Add(nudDuracionEnM);
+            groupBox3.Controls.Add(nudMinutoDesde);
+            groupBox3.Controls.Add(nudHoraDesde);
             groupBox3.Controls.Add(nudNroGuardia);
-            groupBox3.Controls.Add(btnAsignaciondeGuardias);
+            groupBox3.Controls.Add(btnAsignacionGuardias);
             groupBox3.Controls.Add(label4);
             groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(label2);
@@ -128,26 +137,26 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Administración de guardias";
             // 
-            // nudDuracionenM
+            // nudDuracionEnM
             // 
-            nudDuracionenM.Location = new Point(129, 100);
-            nudDuracionenM.Name = "nudDuracionenM";
-            nudDuracionenM.Size = new Size(100, 23);
-            nudDuracionenM.TabIndex = 8;
+            nudDuracionEnM.Location = new Point(129, 100);
+            nudDuracionEnM.Name = "nudDuracionEnM";
+            nudDuracionEnM.Size = new Size(100, 23);
+            nudDuracionEnM.TabIndex = 8;
             // 
-            // nudMinuto
+            // nudMinutoDesde
             // 
-            nudMinuto.Location = new Point(185, 60);
-            nudMinuto.Name = "nudMinuto";
-            nudMinuto.Size = new Size(44, 23);
-            nudMinuto.TabIndex = 7;
+            nudMinutoDesde.Location = new Point(185, 60);
+            nudMinutoDesde.Name = "nudMinutoDesde";
+            nudMinutoDesde.Size = new Size(44, 23);
+            nudMinutoDesde.TabIndex = 7;
             // 
-            // nudHora
+            // nudHoraDesde
             // 
-            nudHora.Location = new Point(129, 60);
-            nudHora.Name = "nudHora";
-            nudHora.Size = new Size(44, 23);
-            nudHora.TabIndex = 6;
+            nudHoraDesde.Location = new Point(129, 60);
+            nudHoraDesde.Name = "nudHoraDesde";
+            nudHoraDesde.Size = new Size(44, 23);
+            nudHoraDesde.TabIndex = 6;
             // 
             // nudNroGuardia
             // 
@@ -156,14 +165,14 @@
             nudNroGuardia.Size = new Size(100, 23);
             nudNroGuardia.TabIndex = 3;
             // 
-            // btnAsignaciondeGuardias
+            // btnAsignacionGuardias
             // 
-            btnAsignaciondeGuardias.Location = new Point(265, 42);
-            btnAsignaciondeGuardias.Name = "btnAsignaciondeGuardias";
-            btnAsignaciondeGuardias.Size = new Size(94, 55);
-            btnAsignaciondeGuardias.TabIndex = 2;
-            btnAsignaciondeGuardias.Text = "Asignación de las guardias";
-            btnAsignaciondeGuardias.UseVisualStyleBackColor = true;
+            btnAsignacionGuardias.Location = new Point(265, 42);
+            btnAsignacionGuardias.Name = "btnAsignacionGuardias";
+            btnAsignacionGuardias.Size = new Size(94, 55);
+            btnAsignacionGuardias.TabIndex = 2;
+            btnAsignacionGuardias.Text = "Asignación de las guardias";
+            btnAsignacionGuardias.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -192,13 +201,6 @@
             label2.TabIndex = 3;
             label2.Text = "Nro Guardia";
             // 
-            // nudPlacaAgente
-            // 
-            nudPlacaAgente.Location = new Point(117, 42);
-            nudPlacaAgente.Name = "nudPlacaAgente";
-            nudPlacaAgente.Size = new Size(134, 23);
-            nudPlacaAgente.TabIndex = 1;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -208,25 +210,35 @@
             label1.TabIndex = 0;
             label1.Text = "Placa de Agente";
             // 
-            // groupBox4
+            // gbAdministracion
             // 
-            groupBox4.Controls.Add(btnRegistrarIncidente);
-            groupBox4.Controls.Add(tbMotivo);
-            groupBox4.Controls.Add(label9);
-            groupBox4.Controls.Add(tbDNI);
-            groupBox4.Controls.Add(label8);
-            groupBox4.Controls.Add(tbNombrePersona);
-            groupBox4.Controls.Add(label7);
-            groupBox4.Controls.Add(numericUpDown1);
-            groupBox4.Controls.Add(label6);
-            groupBox4.Controls.Add(numericUpDown2);
-            groupBox4.Controls.Add(label5);
-            groupBox4.Location = new Point(12, 375);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(428, 241);
-            groupBox4.TabIndex = 2;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Administración de Incidentes";
+            gbAdministracion.Controls.Add(cmbTipoIncidente);
+            gbAdministracion.Controls.Add(btnRegistrarIncidente);
+            gbAdministracion.Controls.Add(tbMotivo);
+            gbAdministracion.Controls.Add(label9);
+            gbAdministracion.Controls.Add(tbDNIPersona);
+            gbAdministracion.Controls.Add(label8);
+            gbAdministracion.Controls.Add(tbNombrePersona);
+            gbAdministracion.Controls.Add(label7);
+            gbAdministracion.Controls.Add(nudMinutoIncidente);
+            gbAdministracion.Controls.Add(label6);
+            gbAdministracion.Controls.Add(nudHoraIncidente);
+            gbAdministracion.Controls.Add(label5);
+            gbAdministracion.Location = new Point(12, 375);
+            gbAdministracion.Name = "gbAdministracion";
+            gbAdministracion.Size = new Size(428, 241);
+            gbAdministracion.TabIndex = 2;
+            gbAdministracion.TabStop = false;
+            gbAdministracion.Text = "Administración de Incidentes";
+            // 
+            // cmbTipoIncidente
+            // 
+            cmbTipoIncidente.FormattingEnabled = true;
+            cmbTipoIncidente.Items.AddRange(new object[] { "Denuncia", "Arresto" });
+            cmbTipoIncidente.Location = new Point(130, 26);
+            cmbTipoIncidente.Name = "cmbTipoIncidente";
+            cmbTipoIncidente.Size = new Size(121, 23);
+            cmbTipoIncidente.TabIndex = 18;
             // 
             // btnRegistrarIncidente
             // 
@@ -255,12 +267,12 @@
             label9.TabIndex = 15;
             label9.Text = "Motivo";
             // 
-            // tbDNI
+            // tbDNIPersona
             // 
-            tbDNI.Location = new Point(320, 108);
-            tbDNI.Name = "tbDNI";
-            tbDNI.Size = new Size(100, 23);
-            tbDNI.TabIndex = 14;
+            tbDNIPersona.Location = new Point(320, 108);
+            tbDNIPersona.Name = "tbDNIPersona";
+            tbDNIPersona.Size = new Size(100, 23);
+            tbDNIPersona.TabIndex = 14;
             // 
             // label8
             // 
@@ -287,12 +299,12 @@
             label7.TabIndex = 11;
             label7.Text = "Persona";
             // 
-            // numericUpDown1
+            // nudMinutoIncidente
             // 
-            numericUpDown1.Location = new Point(207, 65);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(44, 23);
-            numericUpDown1.TabIndex = 10;
+            nudMinutoIncidente.Location = new Point(207, 65);
+            nudMinutoIncidente.Name = "nudMinutoIncidente";
+            nudMinutoIncidente.Size = new Size(44, 23);
+            nudMinutoIncidente.TabIndex = 10;
             // 
             // label6
             // 
@@ -303,12 +315,12 @@
             label6.TabIndex = 10;
             label6.Text = "Hora";
             // 
-            // numericUpDown2
+            // nudHoraIncidente
             // 
-            numericUpDown2.Location = new Point(151, 65);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(44, 23);
-            numericUpDown2.TabIndex = 9;
+            nudHoraIncidente.Location = new Point(151, 65);
+            nudHoraIncidente.Name = "nudHoraIncidente";
+            nudHoraIncidente.Size = new Size(44, 23);
+            nudHoraIncidente.TabIndex = 9;
             // 
             // label5
             // 
@@ -335,25 +347,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(453, 663);
             Controls.Add(btnCerrar);
-            Controls.Add(groupBox4);
-            Controls.Add(groupBox2);
+            Controls.Add(gbAdministracion);
+            Controls.Add(gbOperacionSobreAgente);
             Controls.Add(groupBox1);
             Name = "Form1";
             Text = "Actividad 2";
             groupBox1.ResumeLayout(false);
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            gbOperacionSobreAgente.ResumeLayout(false);
+            gbOperacionSobreAgente.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nudDuracionenM).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudMinuto).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudHora).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudDuracionEnM).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudMinutoDesde).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudHoraDesde).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudNroGuardia).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudPlacaAgente).EndInit();
-            groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            gbAdministracion.ResumeLayout(false);
+            gbAdministracion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudMinutoIncidente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudHoraIncidente).EndInit();
             ResumeLayout(false);
         }
 
@@ -362,30 +373,31 @@
         private GroupBox groupBox1;
         private Button btnListarIncidentes;
         private Button btnCreacionComisaria;
-        private GroupBox groupBox2;
+        private GroupBox gbOperacionSobreAgente;
         private Label label1;
         private GroupBox groupBox3;
-        private NumericUpDown nudPlacaAgente;
-        private NumericUpDown nudDuracionenM;
-        private NumericUpDown nudMinuto;
-        private NumericUpDown nudHora;
+        private NumericUpDown nudDuracionEnM;
+        private NumericUpDown nudMinutoDesde;
+        private NumericUpDown nudHoraDesde;
         private NumericUpDown nudNroGuardia;
-        private Button btnAsignaciondeGuardias;
+        private Button btnAsignacionGuardias;
         private Label label4;
         private Label label3;
         private Label label2;
-        private GroupBox groupBox4;
+        private GroupBox gbAdministracion;
         private Label label5;
         private Label label7;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown nudMinutoIncidente;
         private Label label6;
-        private NumericUpDown numericUpDown2;
-        private TextBox tbDNI;
+        private NumericUpDown nudHoraIncidente;
+        private TextBox tbDNIPersona;
         private Label label8;
         private TextBox tbNombrePersona;
         private TextBox tbMotivo;
         private Label label9;
         private Button btnCerrar;
         private Button btnRegistrarIncidente;
+        private ComboBox cmbPlacaAgente;
+        private ComboBox cmbTipoIncidente;
     }
 }

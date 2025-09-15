@@ -8,30 +8,36 @@ namespace Actividad.Models
 {
     internal class Guardia
     {
-        public int HoraDesde { get; private set; }
-        public int HoraHasta { get; private set; }
+        public int HoraDesde { get; set; }
+        public int MinutoDesde { get; set; }
 
-        public int MinutoDesde { get; private set; }
-        public int MinutoHasta { get; private set; }
-
-        public int CantidadMinutos { get; private set; }
-
-
-        public Policia OficialAsignado { get; private set; }
-
-        public Guardia()
-        {
+        public int HoraHasta { 
+            get
+            {
+                int min = HoraDesde * 60 + MinutoDesde + CantidadMinutos;
+                return min % 60;
+            }
         }
 
+        public int MinutoHasta { 
+            get {
+                int min = HoraDesde * 60 + MinutoDesde + CantidadMinutos;
+                return min / 60;
+            }
+        }
+
+
+        public int CantidadMinutos { get; set; }
+
+        public Guardia(){}
+
+        public Policia OficialAsignado { get; set; }
         public void AsignarPolicia(Policia policia, int horaDesde, int minutoDesde, int cantMinutos)
         {
             this.OficialAsignado = policia;
             this.HoraDesde = horaDesde;
             this.MinutoDesde = minutoDesde;
             this.CantidadMinutos = cantMinutos;
-
         }
-            
-
     }
 }
